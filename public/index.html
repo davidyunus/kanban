@@ -1,0 +1,67 @@
+<html>
+    <head>
+		<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <h1> David's Kanban</h1>
+
+        <div class="content">
+
+          <form id="add-todo-form">
+				<input type="text" name="task" placeholder="Task">
+				<select name="status">
+					<option value="backlog">Backlog</option>
+					<option value="todo">To Do</option>
+					<option value="doing">Doing</option>
+					<option value="done">Done</option>
+				</select>
+				<button>Add Task</button>
+			</form>
+
+		</div>
+
+	<div class="container">
+		<div class="content">
+				<ul id="backlog-list">
+					<h2>Backlog</h2>
+				</ul>
+		</div>
+
+		<div class="content">
+				<ul id="todo-list">
+					<h2>ToDo</h2>
+				</ul>
+		</div>
+
+		<div class="content">
+				<ul id="doing-list">
+					<h2>Doing</h2>
+				</ul>
+		</div>
+			
+		<div class="content">
+				<ul id="done-list">
+					<h2>Done</h2>
+				</ul>
+		</div>
+	</div>
+				<script>
+					// Initialize Firebase
+					var config = {
+						apiKey: "AIzaSyAqYSvsCSjAjMb7KzXaFq6_WPCc1Uluwo4",
+						authDomain: "fir-firebase-5395f.firebaseapp.com",
+						databaseURL: "https://fir-firebase-5395f.firebaseio.com",
+						projectId: "fir-firebase-5395f",
+						storageBucket: "fir-firebase-5395f.appspot.com",
+						messagingSenderId: "293076762805"
+					};
+					firebase.initializeApp(config);
+					const db = firebase.firestore();
+					db.settings({ timestampsInSnapshots: true });
+				</script>
+        <script src="app.js"></script>
+    </body>
+</html>
